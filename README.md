@@ -25,26 +25,26 @@ Alternatively, we can run notebooks with the above packages on Google Colab.
 
 ### Prerequisites
 
-This project is now running on WinPython (the previous Docker image has been deprecated):
-
-- [WinPython](https://winpython.github.io/)
-
-This project is built using Docker for Windows and it has the following dependencies (deprecated):
+This project is now running on a custom Docker image (pynotebook) and it has the following dependencies:
 
 - [Anaconda 3](https://hub.docker.com/r/continuumio/anaconda3)
 - [Python 3](https://www.python.org/)
 - [Backtrader](https://www.backtrader.com/)
 - [Jupyter Notebook](https://jupyter.org/)
 
+This project is NO longer running on WinPython (deprecated):
+
+- [WinPython](https://winpython.github.io/)
+
 ---
 
 ### Project Structure
 
      docktrader/                             <-- Root of your project
-       |- Dockerfile                         <-- Dockerfile of image
+       |- Dockerfile                         <-- Dockerfile of image (deprecated)
        |- README.md                          <-- This README markdown file
        +- config/                            <-- System configuration files go here
-          |- iex.conf                        <-- IEX Finance conf file
+          |- iex.conf                        <-- Token file (.gitignore)
        +- data/                              <-- Data files go here
           +- 01raw/                          <-- Raw data files go here
              +- stockrow/                    <-- Downloaded files from StockRow.com go here
@@ -67,10 +67,11 @@ This project is built using Docker for Windows and it has the following dependen
           |- 011deepspeech.ipynb             <-- Mozilla Deep Speech Transcriber in Python
           |- 012portfolio.ipynb              <-- Mean Variance Optimizer in Python
           |- 013summarize.ipynb              <-- Simple Summarizer with NLP in Python
-          |- 014piece.ipynb                  <--PIECE analysis in Python
-       +- src/                               <-- Python scripts go here
-          |- 001basic.py                     <-- Sample script to show account balance
-          |- 002sma.py                       <-- Sample script to backtest SMA strategy
+          |- 014piece.ipynb                  <-- PIECE analysis in Python
+       +- src/                               <-- Python scripts that correspond to notebooks
+          |- 001import.py                    <-- Sample notebook to import Python libraries
+          |- 002basic.py                     <-- Sample script to show account balance
+          |- 003sma.py                       <-- Sample script to backtest SMA strategy
 
 ---
 
